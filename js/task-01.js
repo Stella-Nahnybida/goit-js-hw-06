@@ -10,8 +10,8 @@ categories.forEach((category, index) => {
   const nameOfCategory = category.querySelector("h2").textContent;
   console.log("Category: ", nameOfCategory);
   console.log("Elements: ", category.querySelectorAll("li").length);
-  const elementsInCategory = category.querySelectorAll("li");
-  elementsInCategory.forEach((element, index) => {
-    console.log(`${index + 1}: `, element.textContent);
-  });
+  // const elementsInCategory = category.querySelectorAll("li");
+  // elementsInCategory.forEach((element, index) => {
+  //   console.log(`${index + 1}: `, element.textContent);
+  // });
 });
