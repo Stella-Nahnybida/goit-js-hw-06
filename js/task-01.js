@@ -1,17 +1,16 @@
 const idCategories = document.querySelector("#categories");
-// console.log("idCategories: ", idCategories);
+const categories = idCategories.querySelectorAll("#categories .item");
 
-const categories = idCategories.querySelectorAll(".item");
-// console.log("categories: ", categories);
+console.log("Number of categories: ", categories.length);
 
-console.log("Number cf categories: ", categories.length);
-
-categories.forEach((category, index) => {
+categories.forEach((category) => {
   const nameOfCategory = category.querySelector("h2").textContent;
-  console.log("Category: ", nameOfCategory);
-  console.log("Elements: ", category.querySelectorAll("li").length);
   const elementsInCategory = category.querySelectorAll("li");
-  elementsInCategory.forEach((element, index) => {
-    console.log(`${index + 1}: `, element.textContent);
-  });
+
+  console.log("Category: ", nameOfCategory);
+  console.log("Elements: ", elementsInCategory.length);
+
+  // elementsInCategory.forEach((element, index) => {
+  //   console.log(`${index + 1}: `, element.textContent);
+  // });
 });
