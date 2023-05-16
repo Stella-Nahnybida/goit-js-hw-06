@@ -1,25 +1,19 @@
 let counterValue = 0;
-const divCounter = document.querySelector("#counter");
 
-const spanValue = document.querySelector("#value");
+// const counterBtns = document.querySelectorAll("#counter button");
+
+const spanValue = document.querySelector("#counter #value");
 counterValue = Number(spanValue.textContent);
 
 const decBtn = document.querySelector('button[data-action="decrement"]');
-console.log(decBtn.dataset.action); // "decrement"
-
 const incBtn = document.querySelector('button[data-action="increment"]');
-console.log(incBtn.dataset.action); // "increment"
 
 decBtn.addEventListener("click", () => {
-  counterValue--;
-  console.log("counterValue--", counterValue);
-  spanValue.textContent = `${counterValue}`;
+  spanValue.textContent = `${--counterValue}`;
 });
 
 incBtn.addEventListener("click", () => {
-  counterValue++;
-  console.log("counterValue++", counterValue);
-  spanValue.textContent = `${counterValue}`;
+  spanValue.textContent = `${++counterValue}`;
 });
 
 // Лічильник складається зі спану і кнопок, які по кліку повинні збільшувати і зменшувати його значення на одиницю.
