@@ -4,6 +4,20 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+const divWidget = document.querySelector('.widget');
+console.log(divWidget);
+
+const spanEl = document.querySelector('.widget .color');
+const changeColorBtn = document.querySelector('.widget .change-color');
+
+changeColorBtn.addEventListener('click', onClick);
+
+function onClick(event) {
+  let newBgColor = getRandomHexColor();
+  spanEl.textContent = `${newBgColor}`;
+  document.body.style = `background-color : ${newBgColor}`;
+}
+
 // Напиши скрипт, який змінює кольори фону елемента <body> через інлайн-стиль по кліку на button.change-color і виводить значення кольору в span.color.
 
 // <div class="widget">
