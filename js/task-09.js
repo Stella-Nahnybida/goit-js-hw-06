@@ -14,8 +14,11 @@ changeColorBtn.addEventListener('click', onClick);
 
 function onClick(event) {
   let newBgColor = getRandomHexColor();
+  console.log(newBgColor);
+
   spanEl.textContent = `${newBgColor}`;
   document.body.style = `background-color : ${newBgColor}`;
+  // ??? Чому в style колір записується у форматі rgb ???
 }
 
 // Напиши скрипт, який змінює кольори фону елемента <body> через інлайн-стиль по кліку на button.change-color і виводить значення кольору в span.color.

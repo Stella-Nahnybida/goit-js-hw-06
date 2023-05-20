@@ -4,6 +4,44 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+const divControls = document.querySelector('#controls');
+const divBoxes = document.querySelector('#boxes');
+const inputEl = divControls.firstElementChild;
+const createBtn = document.querySelector('button[data-create]');
+const destroyBtn = document.querySelector('button[data-destroy]');
+
+let boxAmount;
+inputEl.addEventListener('input', event => {
+  boxAmount = Number(event.currentTarget.value);
+  console.log(boxAmount);
+});
+
+createBtn.addEventListener('click', event => createBoxes(boxAmount));
+destroyBtn.addEventListener('click', event => destroyBoxes());
+
+function createBoxes(amount) {
+  // amount = boxAmount;
+  console.log(`create ${amount} boxes`);
+  for (let i = 0; i < amount; i++) {
+    const newDiv = document.createElement('div');
+
+    newDiv.style = `width: ${30 + i * 10}px;
+      height: ${30 + i * 10}px;
+      background-color: ${getRandomHexColor()}`;
+
+    divBoxes.appendChild(newDiv);
+  }
+  console.log(divBoxes);
+}
+
+function destroyBoxes() {
+  const boxes = divBoxes.querySelectorAll('div');
+  boxes.forEach(box => {
+    box.remove();
+  });
+  console.log(divBoxes);
+}
+
 // Напиши скрипт створення і очищення колекції елементів. Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція. Натисненням на кнопку Очистити, колекція елементів очищається.
 
 // <div id="controls">
