@@ -8,7 +8,9 @@ console.log(dataLength);
 //     : inputEl.classList.add('invalid')
 // );
 
-inputEl.addEventListener('blur', () => {
+inputEl.addEventListener('blur', validInput);
+
+function validInput() {
   const classes = inputEl.classList;
   console.log(inputEl.value);
   if ((inputEl.value.length === dataLength) & !inputEl.value.includes(' ')) {
@@ -16,7 +18,15 @@ inputEl.addEventListener('blur', () => {
       classes.replace('invalid', 'valid');
     } else classes.add('valid');
   } else classes.add('invalid');
-});
+}
+
+// const classes = inputEl.classList;
+// console.log(inputEl.value);
+// if ((inputEl.value.length === dataLength) & !inputEl.value.includes(' ')) {
+//   if (classes.contains('invalid')) {
+//     classes.replace('invalid', 'valid');
+//   } else classes.add('valid');
+// } else classes.add('invalid');
 
 // Напиши скрипт, який під час втрати фокусу на інпуті (подія blur), перевіряє його вміст щодо правильної кількості введених символів.
 
