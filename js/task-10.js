@@ -20,7 +20,7 @@ createBtn.addEventListener('click', event => createBoxes(boxAmount));
 destroyBtn.addEventListener('click', event => destroyBoxes());
 
 function createBoxes(amount) {
-  console.log(`c{reate ${amount} boxes`);
+  console.log(`create ${amount} boxes`);
   let newDivs = [];
 
   for (let i = 0; i < amount; i++) {
