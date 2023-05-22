@@ -20,18 +20,34 @@ createBtn.addEventListener('click', event => createBoxes(boxAmount));
 destroyBtn.addEventListener('click', event => destroyBoxes());
 
 function createBoxes(amount) {
-  console.log(`create ${amount} boxes`);
+  console.log(`c{reate ${amount} boxes`);
+  let newDivs = [];
+
   for (let i = 0; i < amount; i++) {
-    const newDiv = document.createElement('div');
-
-    newDiv.style = `width: ${30 + i * 10}px;
-      height: ${30 + i * 10}px;
-      background-color: ${getRandomHexColor()}`;
-
-    divBoxes.appendChild(newDiv);
+    newDivs[i] = document.createElement('div');
+    newDivs[i].style.width = `${30 + i * 10}px`;
+    newDivs[i].style.height = `${30 + i * 10}px`;
+    newDivs[i].style.backgroundColor = `${getRandomHexColor()}`;
+    console.log(newDivs[i]);
   }
+
+  divBoxes.append(...newDivs);
   console.log(divBoxes);
 }
+
+// function createBoxes(amount) {
+//   console.log(`create ${amount} boxes`);
+//   for (let i = 0; i < amount; i++) {
+//     const newDiv = document.createElement('div');
+
+//     newDiv.style = `width: ${30 + i * 10}px;
+//       height: ${30 + i * 10}px;
+//       background-color: ${getRandomHexColor()}`;
+
+//     divBoxes.appendChild(newDiv);
+//   }
+//   console.log(divBoxes);
+// }
 
 function destroyBoxes() {
   const boxes = divBoxes.querySelectorAll('div');
