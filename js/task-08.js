@@ -10,10 +10,12 @@ function onSubmit(event) {
   } = event.currentTarget;
 
   if (email.value === '' || password.value === '') {
-    return console.log('Please fill in all the fields!');
+    return alert('Please fill in all the fields!');
   }
 
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  console.log(elements);
+  // console.log(`Email: ${email.value}, Password: ${password.value}`);
+
   event.currentTarget.reset();
 }
 // const email = document.querySelector('.login-form');
