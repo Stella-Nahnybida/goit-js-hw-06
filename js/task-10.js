@@ -21,19 +21,36 @@ destroyBtn.addEventListener('click', event => destroyBoxes());
 
 function createBoxes(amount) {
   console.log(`create ${amount} boxes`);
-  let newDivs = [];
+  let boxes = [];
 
   for (let i = 0; i < amount; i++) {
-    newDivs[i] = document.createElement('div');
-    newDivs[i].style.width = `${30 + i * 10}px`;
-    newDivs[i].style.height = `${30 + i * 10}px`;
-    newDivs[i].style.backgroundColor = `${getRandomHexColor()}`;
-    console.log(newDivs[i]);
+    const box = document.createElement('div');
+    box.style.width = `${30 + i * 10}px`;
+    box.style.height = `${30 + i * 10}px`;
+    box.style.backgroundColor = `${getRandomHexColor()}`;
+    boxes.push(box);
+    console.log(boxes);
   }
 
-  divBoxes.append(...newDivs);
+  divBoxes.append(...boxes);
   console.log(divBoxes);
 }
+
+// function createBoxes(amount) {
+//   console.log(`create ${amount} boxes`);
+//   let newDivs = [];
+
+//   for (let i = 0; i < amount; i++) {
+//     newDivs[i] = document.createElement('div');
+//     newDivs[i].style.width = `${30 + i * 10}px`;
+//     newDivs[i].style.height = `${30 + i * 10}px`;
+//     newDivs[i].style.backgroundColor = `${getRandomHexColor()}`;
+//     console.log(newDivs[i]);
+//   }
+
+//   divBoxes.append(...newDivs);
+//   console.log(divBoxes);
+// }
 
 // function createBoxes(amount) {
 //   console.log(`create ${amount} boxes`);
