@@ -19,22 +19,52 @@ inputEl.addEventListener('input', event => {
 createBtn.addEventListener('click', event => createBoxes(boxAmount));
 destroyBtn.addEventListener('click', event => destroyBoxes());
 
+function createBox(numberOfOrder) {
+  const box = document.createElement('div');
+  box.style.width = `${30 + numberOfOrder * 10}px`;
+  box.style.height = `${30 + numberOfOrder * 10}px`;
+  box.style.backgroundColor = `${getRandomHexColor()}`;
+  return box;
+}
+
 function createBoxes(amount) {
-  console.log(`create ${amount} boxes`);
+  console.log(`Let create ${amount} boxes!`);
   let boxes = [];
 
   for (let i = 0; i < amount; i++) {
-    const box = document.createElement('div');
-    box.style.width = `${30 + i * 10}px`;
-    box.style.height = `${30 + i * 10}px`;
-    box.style.backgroundColor = `${getRandomHexColor()}`;
+    const box = createBox(i);
     boxes.push(box);
-    console.log(boxes);
+    // console.log(boxes);
   }
 
   divBoxes.append(...boxes);
   console.log(divBoxes);
 }
+
+function destroyBoxes() {
+  const boxes = divBoxes.querySelectorAll('div');
+  boxes.forEach(box => {
+    box.remove();
+  });
+  console.log(divBoxes);
+}
+
+// function createBoxes(amount) {
+//   console.log(`create ${amount} boxes`);
+//   let boxes = [];
+
+//   for (let i = 0; i < amount; i++) {
+//     const box = document.createElement('div');
+//     box.style.width = `${30 + i * 10}px`;
+//     box.style.height = `${30 + i * 10}px`;
+//     box.style.backgroundColor = `${getRandomHexColor()}`;
+//     boxes.push(box);
+//     console.log(boxes);
+//   }
+
+//   divBoxes.append(...boxes);
+//   console.log(divBoxes);
+// }
 
 // function createBoxes(amount) {
 //   console.log(`create ${amount} boxes`);
@@ -65,14 +95,6 @@ function createBoxes(amount) {
 //   }
 //   console.log(divBoxes);
 // }
-
-function destroyBoxes() {
-  const boxes = divBoxes.querySelectorAll('div');
-  boxes.forEach(box => {
-    box.remove();
-  });
-  console.log(divBoxes);
-}
 
 // Напиши скрипт створення і очищення колекції елементів. Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція. Натисненням на кнопку Очистити, колекція елементів очищається.
 
